@@ -1,5 +1,45 @@
+import java.util.ArrayList;
+import java.util.List;
+
 // import java.util.ArrayList;
 // import java.util.List;
+
+/**
+ * Desafio03
+ */
+public class Desafio03 {
+    public static void main(String[] args) {
+                 ArrayList<String> lista = new ArrayList<>(List.of("acbda", "fasdlkh", "poiwqd", "zxcqwtop", "qfgophl"));
+    }
+
+    public static void organizar(ArrayList<String> lista) {
+        Character caracterAtual;
+        Character caracterPosterior;
+        for (int p = 0; p < lista.size(); p++) {
+            String palavra = lista.get(p);
+
+            for (int l = 0; l < palavra.length(); l++) {
+                caracterAtual = palavra.charAt(l);
+
+                try {
+                    caracterPosterior = palavra.charAt(l+1);
+                } catch (IndexOutOfBoundsException e) {
+                    //TODO: Não tem posterior para comparar, encerrar comparação
+                    break;
+                }
+                if ((caracterAtual.compareTo(caracterPosterior) < 0)) { // True: está na ordem alfabética
+                    //TODO: guardar essas duas letras em um novo array (criar um novo array de maiores ordens )
+                                            
+                    //                     }
+
+                
+            }
+
+            
+        }
+    }
+    
+}
 
 // /*
 //  * Enunciado

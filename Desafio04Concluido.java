@@ -16,7 +16,7 @@ public void juntarArrays(int[] array1, int[] array2,
 
  */
 
-public class Desafio04 {
+public class Desafio04Concluido {
     public static void main(String[] args) {
         int[] array1 = {1, 3, 5, 7};
         int[] array2 = {2, 4, 6, 8, 12, 15};
@@ -33,11 +33,6 @@ public class Desafio04 {
         int i = 0;
         Boolean array1IsNotEmpty = true;
         Boolean array2IsNotEmpty = true;
-
-        //Talvez se eu atribuir um contador pra cada array separado do i (que ficaria pra arrayConsolidada)
-        // https://www.programiz.com/java-programming/examples/concatenate-two-arrays
-
-        System.arraycopy(src, srcPos, dest, destPos, length);
 
         while (array1IsNotEmpty && array2IsNotEmpty) {
             if (i > array1.length) {

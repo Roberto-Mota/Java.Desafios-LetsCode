@@ -35,6 +35,9 @@ public class Desafio04 {
         Boolean array2IsNotEmpty = true;
 
         //Talvez se eu atribuir um contador pra cada array separado do i (que ficaria pra arrayConsolidada)
+        // https://www.programiz.com/java-programming/examples/concatenate-two-arrays
+
+        System.arraycopy(src, srcPos, dest, destPos, length);
 
         while (array1IsNotEmpty && array2IsNotEmpty) {
             if (i > array1.length) {

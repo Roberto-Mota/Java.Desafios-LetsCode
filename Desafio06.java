@@ -35,26 +35,53 @@ Complexidade de tempo requerida: O(n)
 Restriçoes:
 Nao utilizar usar Collections
 Nao utilizar loops aninhados (for dentro de for, ou recursoes dentro de loops). Somente O(n) é aceitável.
+// A resposta tá no substring
  */
 
 public class Desafio06 {
     public static void main(String[] args) {
-        //maximoCombinacoes();
+        {
+
+            // Get N
+            int N = 5, sum = 0;
+
+            // Input values of an array
+            int array[] = { 1, 2, 3, 4, 5 };
+
+            // Find the sum
+            sum = Desafio06.operate(array, N);
+
+            // Print the sum
+            System.out.print(sum);
+        }
+        // maximoCombinacoes();
     }
-    
 
+    private static int operate(int array[], int N) {
+        int sum = 0, index = 0;
+        while (true) {
+            sum += array[index++];
+            if (index < N) {
+                continue;
+            } else {
+                break;
+            }
+        }
 
-// public static int maximoCombinacoes(int array[], int num) {
-//     for (int i = 0; i < array.length; i++) {
-        
-//         String numeroString = String.valueOf(array[1]);
-//         numeroString.substring(i, num);
-//         //Math.incrementExact(a)
-//        BigDecimal teste = new BigDecimal(10);
+        // return the sum
+        return sum;
+    }
 
-//        //Posso utilizar o Substring talvez -?-
-       
-//     }
+    // public static int maximoCombinacoes(int array[], int num) {
+    // for (int i = 0; i < array.length; i++) {
 
-// }
+    // String numeroString = String.valueOf(array[1]);
+    // numeroString.substring(i, num);
+    // BigDecimal teste = new BigDecimal(10);
+
+    // //Posso utilizar o Substring talvez -?-
+
+    // }
+
+    // }
 }

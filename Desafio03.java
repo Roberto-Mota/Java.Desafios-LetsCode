@@ -1,99 +1,99 @@
-import java.util.ArrayList;
-import java.util.List;
+// import java.util.ArrayList;
+// import java.util.List;
 
-/*
- * Enunciado
-Enunciado
+// /*
+//  * Enunciado
+// Enunciado
 
-Dada uma lista de Strings, determine qual a maior sequência de letras em ordem alfabética crescente.
+// Dada uma lista de Strings, determine qual a maior sequência de letras em ordem alfabética crescente.
 
-Entrada:
+// Entrada:
 
-acbda, fasdlkh, poiwqd, zxcqwtop, qfgophl
+// acbda, fasdlkh, poiwqd, zxcqwtop, qfgophl
 
-Saída:
+// Saída:
 
-fgop
- */
+// fgop
+//  */
 
-public class Desafio03 {
-    public static void main(String[] args) {
-        ArrayList<String> lista = new ArrayList<>(List.of("acbda", "fasdlkh", "poiwqd", "zxcqwtop", "qfgophl"));
+// public class Desafio03 {
+//     public static void main(String[] args) {
+//         ArrayList<String> lista = new ArrayList<>(List.of("acbda", "fasdlkh", "poiwqd", "zxcqwtop", "qfgophl"));
 
-        Integer resultado = 0;
-        Integer resultadoAnterior = 0;
-        Integer indexComeco = 0;
-        Integer indexFinal = 0;
-        for (int i = 0; i < lista.size(); i++) { //Pra cada String
+//         Integer resultado = 0;
+//         Integer resultadoAnterior = 0;
+//         Integer indexComeco = 0;
+//         Integer indexFinal = 0;
+//         for (int i = 0; i < lista.size(); i++) { //Pra cada String
 
-            Integer maiorSequencia = 0;
-            for (int j = 0; j < lista.get(i).length(); j++) { //Pra cada caracter da String
-                Character caracter = lista.get(i).charAt(j);
-                Character caracterPosterior = lista.get(i).charAt(j+1);
-                if (j+1 <= lista.get(i).length() - 1) { //Evitar ArrayIndexOutOfBoundsException
+//             Integer maiorSequencia = 0;
+//             for (int j = 0; j < lista.get(i).length(); j++) { //Pra cada caracter da String
+//                 Character caracter = lista.get(i).charAt(j);
+//                 Character caracterPosterior = lista.get(i).charAt(j+1);
+//                 if (j+1 <= lista.get(i).length() - 1) { //Evitar ArrayIndexOutOfBoundsException
                     
 
 
 
-                    System.out.println("compare: " + caracter + " com " + caracterPosterior + ": " + caracter.compareTo(caracterPosterior));
-                    // Se for a primeira checagem pula, mas se for da segunda pra diante, se der -1 e a anterior também ter dado -1 == é sequencia
-                    if (j != 0 && resultado == -1) { //Ponto, mas é sequência?
-                        indexComeco = j;
-                    while (resultado == -1 && resultadoAnterior == -1) {
-                        System.out.println("É sequência!");
-                        indexFinal = j;
-                        resultado = caracter.compareTo(caracterPosterior);
-                        resultadoAnterior = resultado;
-                        // Posso talvez usar subString ou subsequence
+//                     System.out.println("compare: " + caracter + " com " + caracterPosterior + ": " + caracter.compareTo(caracterPosterior));
+//                     // Se for a primeira checagem pula, mas se for da segunda pra diante, se der -1 e a anterior também ter dado -1 == é sequencia
+//                     if (j != 0 && resultado == -1) { //Ponto, mas é sequência?
+//                         indexComeco = j;
+//                     while (resultado == -1 && resultadoAnterior == -1) {
+//                         System.out.println("É sequência!");
+//                         indexFinal = j;
+//                         resultado = caracter.compareTo(caracterPosterior);
+//                         resultadoAnterior = resultado;
+//                         // Posso talvez usar subString ou subsequence
                         
-                    }
+//                     }
 
-                        // if (resultadoAnterior == -1) { //Sequencia cresce
+//                         // if (resultadoAnterior == -1) { //Sequencia cresce
 
-                        // } else if (resultadoAnterior != -1) { // Já é outra sequência
+//                         // } else if (resultadoAnterior != -1) { // Já é outra sequência
 
-                        // }
-                    }
+//                         // }
+//                     }
                         
-                    }
+//                     }
 
-                    if ((caracter.compareTo(caracterPosterior) == -1)) { // Se for -1 significa que está na ordem alfabética
-                        //TODO: guardar essas duas letras em um novo array (criar um novo array de maiores ordens )
+//                     if ((caracter.compareTo(caracterPosterior) == -1)) { // Se for -1 significa que está na ordem alfabética
+//                         //TODO: guardar essas duas letras em um novo array (criar um novo array de maiores ordens )
                         
-                    }
+//                     }
 
                     
-                }
-                // System.out.println("j: " + j + " -> Lista.get(i).length(): " + lista.get(i).length());
-                // System.out.println();
+//                 }
+//                 // System.out.println("j: " + j + " -> Lista.get(i).length(): " + lista.get(i).length());
+//                 // System.out.println();
                 
-            }
+//             }
 
-            // Copiei uma solução de contagem de booleanos em sequência:
-    //         boolean[] input = {true, false, false, true, true, false};
+//             // Copiei uma solução de contagem de booleanos em sequência:
+//     //         boolean[] input = {true, false, false, true, true, false};
     
-    // int count = 0;
+//     // int count = 0;
     
-    // List<Integer> output = new ArrayList<>();
+//     // List<Integer> output = new ArrayList<>();
     
-    // for (int i = 0; i < input.length; i++) {
-    //     if (input[i]) {
-    //         count++;
-    //     } else {
-    //         if (count > 0) {
-    //             output.add(count);
-    //         }
-    //         count = 0;
-    //     }
+//     // for (int i = 0; i < input.length; i++) {
+//     //     if (input[i]) {
+//     //         count++;
+//     //     } else {
+//     //         if (count > 0) {
+//     //             output.add(count);
+//     //         }
+//     //         count = 0;
+//     //     }
         
-    //     if (i == input.length - 1 && count > 0) {
-    //         output.add(count);
-    //     }
-    // }
+//     //     if (i == input.length - 1 && count > 0) {
+//     //         output.add(count);
+//     //     }
+//     // }
     
-    // System.out.println(output);
+//     // System.out.println(output);
             
-        }
-    }
+//         }
+//     }
     
 

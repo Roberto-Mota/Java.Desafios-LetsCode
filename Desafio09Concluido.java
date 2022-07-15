@@ -1,4 +1,4 @@
-public class Desafio09 {
+public class Desafio09Concluido {
     public static void main(String[] args) {
         System.out.println(threeX("frdts2XXX6xxbl2XXXeee5"));
     }

@@ -20,11 +20,11 @@ Saída:
 Porque o índice 0 contém 2 e o índice 2 contém 7. 2+7=9
  */
 
-public class Desafio07 {
+public class Desafio07Concluido {
 
     public static void main(String[] args) {
         int[] nums = {5, 2, 8, 4, 9, 1, 7};
-        int[] resultado = Solucao.somaDois(nums, 50);
+        int[] resultado = Solucao.somaDois(nums, 14);
         for (int i : resultado) {
             System.out.println(i);
         }

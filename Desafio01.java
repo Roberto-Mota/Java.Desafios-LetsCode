@@ -13,7 +13,6 @@ Exemplo:
 
 Resultado: 3 propriedades.
 
-
 class Solucao {
     public int numTerrenos(char[][] terrenos) {
 

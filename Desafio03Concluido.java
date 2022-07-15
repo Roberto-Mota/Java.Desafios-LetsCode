@@ -1,84 +1,62 @@
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Desafio03
- */
 public class Desafio03Concluido {
     public static void main(String[] args) {
-        ArrayList<String> lista = new ArrayList<>(List.of("a", "acbda", "fasdlkh", "poiwqd", "zxcqwtop", "qfgophl"));
-        String maiorOrdem = organizar(lista);
-        System.out.println();
-        System.out.println("Organização completa, maior ordem:");
+        ArrayList<String> lista = new ArrayList<>(List.of("acbda", "fasdlkh", "poiwqd", "zxcqwtop", "qfgophl"));
+        String[] input = new String[lista.size()];
+        for (int i = 0; i < input.length; i++) {
+            input[i] = lista.get(i);
+        }
+
+        Desafio03Concluido desafio = new Desafio03Concluido();
+        String maiorOrdem = desafio.substring(input);
+        System.out.println("Maior ordem: ");
         System.out.println(maiorOrdem);
     }
 
-    // Tá listando as strings de forma adequada, porém as comparações estão completamente errôneas.
-    public static String organizar(ArrayList<String> lista) {
+    public String substring(String[] lista) {
+        ArrayList<String> listaArray = new ArrayList<>();
+
+        for (int i = 0; i < lista.length; i++) {
+            listaArray.add(lista[i]);
+        }
+
         Character caracterAtual;
         Character caracterPosterior;
         ArrayList<String> maioresOrdens = new ArrayList<>();
-        for (int p = 0; p < lista.size(); p++) {
-            String palavra = lista.get(p);
-            System.out.println();
-            System.out.println("----------------------------");
-            System.out.println("Checar palavra: " + palavra);
-            if (p == 3) {
-                System.out.println("aqui");
-            }
-
+        for (int p = 0; p < listaArray.size(); p++) {
+            String palavra = listaArray.get(p);
             StringBuilder acumulador = new StringBuilder();
             StringBuilder maiorOrdem = new StringBuilder("");
-
             Boolean isSequence = false;
             for (int l = 0; l < palavra.length(); l++) {
                 caracterAtual = palavra.charAt(l);
-                System.out.print("Char Atual e Posterior: " + caracterAtual);
-
                 try {
                     caracterPosterior = palavra.charAt(l + 1);
-                    System.out.print(" - " + caracterPosterior);
                 } catch (IndexOutOfBoundsException e) {
-                    // TODO: Não tem posterior para comparar, encerrar comparação
-                    if(isSequence && acumulador.length() >= maiorOrdem.length()) {
+                    if (isSequence && acumulador.length() >= maiorOrdem.length()) {
                         acumulador.append(caracterAtual);
                         maiorOrdem = acumulador;
                     }
                     maioresOrdens.add(maiorOrdem.toString());
                     break;
                 }
-                if ((caracterAtual.compareTo(caracterPosterior) <= 0)) { // True: está na ordem alfabética
-                    // TODO: guardar a proxima letra em um novo array (criar um novo array de
-                    // maiores ordens)
+                if ((caracterAtual.compareTo(caracterPosterior) <= 0)) {
                     acumulador.append(caracterAtual);
-                    System.out.println(" (Sequencia!)");
                     isSequence = true;
-
-                    // maiorOrdem.concat(caracterAtual);
-                } else { // Não está em ordem
-                         // TODO: acumular as letras e sobrescrever a array da maior ordem, caso seja
-                         // maior
-                         // Pra adicionar a primeira letra da ordem (que nao foi incluida), usar um
-                         // String.find e alocar a primeira (ou vice-versa)
-                         System.out.println();
+                } else {
                     acumulador.append(caracterAtual);
                     isSequence = false;
                 }
-
                 if (!isSequence) {
                     if (acumulador.length() > maiorOrdem.length()) {
-                        System.out.println("O acumulador: " + acumulador.toString());
                         maiorOrdem.delete(0, maiorOrdem.length());
                         maiorOrdem.append(acumulador);
-                    } 
+                    }
                     acumulador.delete(0, acumulador.length());
-                   // System.out.println("Nova maior ordem: " + maiorOrdem.toString());
                 }
-
             }
-            System.out.println();
-            System.out.println("Maior ordem dessa palavra: " + maiorOrdem.toString());
-
         }
         String maiorOrdemTotal = "";
         for (String string : maioresOrdens) {
@@ -88,7 +66,6 @@ public class Desafio03Concluido {
         }
         return maiorOrdemTotal;
     }
-
 }
 
 // /*

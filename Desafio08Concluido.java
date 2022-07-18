@@ -19,10 +19,12 @@ public static void main(String[] args) {
 
 Retornar o seguinte output:
 
-Este sorvete de massa no COPO é do sabor de Morango Esse sorvete de palito é do sabor de Chocolate Este sorvete de massa no CONE é do sabor de Baunilha
+Este sorvete de massa no COPO é do sabor de Morango
+Esse sorvete de palito é do sabor de Chocolate
+Este sorvete de massa no CONE é do sabor de Baunilha
 
  */
 
-public class Desafio08 {
+public class Desafio08Concluido {
     
 }

@@ -16,10 +16,8 @@ package Desafio12Mensageria;
 public class Desafio12 {
     public static void main(String[] args) {
         Mensagem msg = new Mensagem();
-        msg.sendMessage("téste", "teste", Formatacao.MAIUSCULO);
+        msg.sendMessage("téste resto testando acabar              do         comeco ao fim TESTE COM CAPS Parar Teste", "teste", Formatacao.CAMELCASE);
     }
-
-
 }
 
 //TODO: Função que recebe 3 parametros: mensagem, e-mail, formatação (sobrescrita de sem formatação)

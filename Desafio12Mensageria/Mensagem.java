@@ -1,11 +1,9 @@
 package Desafio12Mensageria;
-
 import java.text.Normalizer;
 
 public class Mensagem {
 
     public void sendMessage(String message, String email) {
-
         System.out.printf("Mensagem enviada para %s: \n %s", email, message);
     }
 
@@ -24,9 +22,14 @@ public class Mensagem {
                 return message;
 
             case CAMELCASE:
-                // TODO: While com (Achar espaço, pegar o proximo caracter, colocar como uppercase e
-                // colocar no lugar do espaço)
-                return message;
+                // message = message.replaceAll("( )+", " "); //Aparentemente isso não é
+                // necessário, porém não sei o motivo
+                StringBuilder strBuilder = new StringBuilder(message.trim());
+                while (strBuilder.indexOf(" ") >= 0) {
+                    strBuilder = strBuilder.replace(strBuilder.indexOf(" "), (strBuilder.indexOf(" ") + 2),
+                            String.valueOf(Character.toUpperCase(strBuilder.charAt(strBuilder.indexOf(" ") + 1))));
+                }
+                return strBuilder.toString();
 
             case MAIUSCULO:
                 return message.toUpperCase();
@@ -36,7 +39,6 @@ public class Mensagem {
 
             default:
                 return message;
-
         }
     }
 }

@@ -43,10 +43,10 @@ public class Desafio02Concluido {
         //numeroString = String.valueOf(numeroOrdenado);
 
         StringBuilder builder = new StringBuilder(numeroOrdenado.size());
-        for(Character ch: numeroOrdenado)
-        {
-           // builder.append(ch);
-        }
+        // for(Character ch: numeroOrdenado)
+        // {
+        //    // builder.append(ch);
+        // }
         System.out.println(builder);
         
         return (Integer.parseInt(builder.toString()));
